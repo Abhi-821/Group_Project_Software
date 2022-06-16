@@ -3,6 +3,7 @@
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!\
  Editors: Fizza Imran, Abhi Sharma, Sniya Hussain, Gurleen Singh.
+ 16-jun 2022
  */
 package ca.sheridancollege.project;
 

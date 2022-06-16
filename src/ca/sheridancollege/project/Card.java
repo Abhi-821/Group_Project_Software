@@ -2,7 +2,7 @@
  * SYST 17796 Project Base code.
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!\
- ....
+ Editors: Fizza Imran, Abhi Sharma, Sniya Hussain, Gurleen Singh.
  */
 package ca.sheridancollege.project;
 

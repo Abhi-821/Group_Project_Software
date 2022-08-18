@@ -22,7 +22,7 @@ public class WarPlayer extends Player{
     public ArrayList<WarCard> getPlayer1War() {
         try {
             player1War.add(player1Hand.get(0));
-        } catch (NullPointerException e) {
+        } catch (IndexOutOfBoundsException e) {
             self.declareWinner();
         }
         return player1War;
@@ -31,7 +31,7 @@ public class WarPlayer extends Player{
     public ArrayList<WarCard> getPlayer2War() {
         try {
             player2War.add(player2Hand.get(0));
-        } catch (NullPointerException e) {
+        } catch (IndexOutOfBoundsException e) {
             self.declareWinner();
         }
         return player2War;
@@ -61,7 +61,7 @@ public class WarPlayer extends Player{
                 currentCard = player1Hand.get(0);
                 player1Hand.remove(0);
                 player1Hand.add(currentCard);
-            } catch (NullPointerException e) {
+            } catch (IndexOutOfBoundsException e) {
                 self.declareWinner();
             }
         } else if (playerNum == 2){
@@ -69,7 +69,7 @@ public class WarPlayer extends Player{
                 currentCard = player2Hand.get(0);
                 player2Hand.remove(0);
                 player2Hand.add(currentCard);
-            } catch (NullPointerException e) {
+            } catch (IndexOutOfBoundsException e) {
                 self.declareWinner();
             }
         }
@@ -80,14 +80,14 @@ public class WarPlayer extends Player{
             try {
                 WarCard card = player2Hand.remove(player2Hand.size() - 1);
                 player1Hand.add(card);
-            } catch (NullPointerException e) {
+            } catch ( IndexOutOfBoundsException e) {
                 self.declareWinner();
             }
         } else if (higher == 2) {
             try {
                 WarCard card = player1Hand.remove(player1Hand.size() - 1);
                 player2Hand.add(card);
-            } catch (NullPointerException e) {
+            } catch (IndexOutOfBoundsException e) {
                 self.declareWinner();
             }
         }
@@ -100,7 +100,7 @@ public class WarPlayer extends Player{
                 card1 = player1Hand.get(0);
                 player1Hand.remove(0);
                 getPlayer1War().add(card1);
-            } catch (NullPointerException e) {
+            } catch (IndexOutOfBoundsException e) {
                 self.declareWinner();
             }
 
@@ -113,7 +113,7 @@ public class WarPlayer extends Player{
                 card2 = player2Hand.get(0);
                 player2Hand.remove(0);
                 getPlayer2War().add(card2);
-            } catch (NullPointerException e) {
+            } catch (IndexOutOfBoundsException e) {
                 self.declareWinner();
             }
         }

@@ -24,7 +24,7 @@ public class CardDealer {
                 temp = cards.get(i);
                 player1Hand.add(temp);
             }
-            for (int i = 26; i < 51; i++) {
+            for (int i = 26; i < 52; i++) {
                 temp = cards.get(i);
                 player2Hand.add(temp);
             }

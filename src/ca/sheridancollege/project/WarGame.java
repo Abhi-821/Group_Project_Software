@@ -23,7 +23,8 @@ public class WarGame extends Game{
         System.out.println("Enter the Second player's name");
         player2 = new WarPlayer(input.nextLine());
         player2.getHand(2);
-
+        player2.setPlayer1War(player1.getPlayer1War());
+        player1.setPlayer2War(player2.getPlayer2War());
         System.out.println("Welcome! the Game has started, enter 0 at anytime to quit");
         System.out.println("Both Players have been assigned 26 cards!");
         System.out.println("---------------------------------------------------");
@@ -85,7 +86,7 @@ public class WarGame extends Game{
             } else if (player1Card.compare(player2Card) == -1) {
                 player2HasHigherCard();
             }else{
-               bothHaveEqualCards();
+               bothHaveEqualCards(true);
             }
             System.out.println();
             score();
@@ -112,7 +113,7 @@ public class WarGame extends Game{
         System.out.println();
         player2.switchCards(2);
     }
-    public void bothHaveEqualCards(){
+    public void bothHaveEqualCards(boolean clear){
         System.out.println("both players played cards of same rank.");
         System.out.println(player1.getName()+ " played  "+  player1Card + "  " +
                 player2.getName() +" played  "+ player2Card);
@@ -136,7 +137,7 @@ public class WarGame extends Game{
             play = input.nextInt();
         }
 
-        player1.player1Draw3Cards();
+        player1.player1Draw3Cards(clear);
         System.out.println("");
         System.out.println("three cards have been drawn from your deck and the first card has been flipped");
         player1Card = player1.flipCard(1);
@@ -159,7 +160,7 @@ public class WarGame extends Game{
             System.out.println("invalid input try again");
             play = input.nextInt();
         }
-        player2.player2Draw3Cards();
+        player2.player2Draw3Cards(clear);
         System.out.println("");
         System.out.println("three cards have been drawn from your deck and the first one has been flipped");
         player2Card = player2.flipCard(2);
@@ -175,12 +176,12 @@ public class WarGame extends Game{
             player2.warWinner(2);
         }else{
             System.out.println("Another War has begun");
-            bothHaveEqualCards();
+            bothHaveEqualCards(false);
         }
     }
     public void score(){
         System.out.println("player1 "+ player1.getName() + " has " + player1.getPlayer1Hand().size() + " cards");
-        System.out.println("player2 "+ player2.getName() + " has " + (player2.getPlayer2Hand().size()+1) + " cards");
+        System.out.println("player2 "+ player2.getName() + " has " + player2.getPlayer2Hand().size() + " cards");
     }
 
     public static void main(String[] args){

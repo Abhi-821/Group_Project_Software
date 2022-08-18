@@ -20,21 +20,19 @@ public class WarPlayer extends Player{
     }
 
     public ArrayList<WarCard> getPlayer1War() {
-        try {
-            player1War.add(player1Hand.get(0));
-        } catch (IndexOutOfBoundsException e) {
-            self.declareWinner();
-        }
         return player1War;
     }
 
     public ArrayList<WarCard> getPlayer2War() {
-        try {
-            player2War.add(player2Hand.get(0));
-        } catch (IndexOutOfBoundsException e) {
-            self.declareWinner();
-        }
         return player2War;
+    }
+
+    public void setPlayer1War(ArrayList<WarCard> player1War) {
+        this.player1War = player1War;
+    }
+
+    public void setPlayer2War(ArrayList<WarCard> player2War) {
+        this.player2War = player2War;
     }
 
     public ArrayList<WarCard> getPlayer1Hand() {
@@ -91,9 +89,11 @@ public class WarPlayer extends Player{
                 self.declareWinner();
             }
         }
-
     }
-    public void player1Draw3Cards(){
+    public void player1Draw3Cards(boolean clear){
+        if(clear) {
+            getPlayer1War().clear();
+        }
         for(int i=0 ; i <3 ; i++){
             WarCard card1;
             try {
@@ -106,7 +106,10 @@ public class WarPlayer extends Player{
 
         }
     }
-    public void player2Draw3Cards(){
+    public void player2Draw3Cards(boolean clear){
+        if(clear) {
+            getPlayer2War().clear();
+        }
         for(int i=0 ; i <3 ; i++) {
             WarCard card2;
             try {
@@ -120,19 +123,27 @@ public class WarPlayer extends Player{
     }
     public void warWinner(int playerNum){
         if(playerNum == 1) {
-            getPlayer2War().forEach((n) -> getPlayer1Hand().add(n));
+           // getPlayer2War().forEach((n) -> getPlayer1Hand().add(n));
+            //getPlayer1War().forEach((n) -> getPlayer1Hand().add(n));
+            for(int i =0 ; i< player2War.size() ; i++){
+                getPlayer1Hand().add(getPlayer2War().get(i));
+                getPlayer1Hand().add(getPlayer1War().get(i));
+            }
         }
         if(playerNum == 2) {
-            getPlayer1War().forEach((n) -> getPlayer2Hand().add(n));
+            for(int i =0 ; i< player2War.size() ; i++){
+                getPlayer2Hand().add(getPlayer1War().get(i));
+                getPlayer2Hand().add(getPlayer2War().get(i));
+            }
         }
     }
 
     public WarCard flipCard(int playerNum){
         if(playerNum == 1) {
-            return getPlayer1Hand().get(0);
+            return getPlayer1War().get(getPlayer1War().size()-1);
         }
         else if(playerNum == 2){
-            return getPlayer2Hand().get(0);
+            return getPlayer2War().get(getPlayer2War().size()-1);
         }
         return null;
     }

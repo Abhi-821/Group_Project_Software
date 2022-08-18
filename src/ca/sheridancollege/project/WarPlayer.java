@@ -123,8 +123,6 @@ public class WarPlayer extends Player{
     }
     public void warWinner(int playerNum){
         if(playerNum == 1) {
-           // getPlayer2War().forEach((n) -> getPlayer1Hand().add(n));
-            //getPlayer1War().forEach((n) -> getPlayer1Hand().add(n));
             for(int i =0 ; i< player2War.size() ; i++){
                 getPlayer1Hand().add(getPlayer2War().get(i));
                 getPlayer1Hand().add(getPlayer1War().get(i));

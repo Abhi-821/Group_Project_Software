@@ -2,7 +2,6 @@ package ca.sheridancollege.project;
 import java.util.ArrayList;
 
 
-
 public class Deck extends GroupOfCards{
 
     private int deckSize;
@@ -28,19 +27,13 @@ public class Deck extends GroupOfCards{
                     WarCard card = new WarCard(rank,suit);
                     cards.add(card);
                 }
-
             }
-
         }
         public static ArrayList<WarCard> getDeck(){
-            createDeck();
             return cards;
         }
 
-      //  public static void main (String[] args){
-            //createDeck();
 
-        //}
 
 
 

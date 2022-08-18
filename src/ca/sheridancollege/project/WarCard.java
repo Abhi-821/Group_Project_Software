@@ -11,18 +11,6 @@ public class WarCard extends Card{
         this.suit = suit;
     }
 
-/*
-    public int compareCards(WarCard card) {
-        if(this.getRank().compareTo(card.getRank()) < 0){
-            return 1;
-        }
-        else if(this.getRank().compareTo(card.getRank()) > 0){
-            return -1;
-        }
-        else
-            return 0;
-    }
-*/
     public enum Suit { SPADES, CLUBS, HEARTS, DIAMONDS}
     public enum Rank {TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TEN,JACK,QUEEN,KING,ACE}
 
@@ -41,12 +29,13 @@ public class WarCard extends Card{
     public void setSuit(Suit suit) {
         this.suit = suit;
     }
-
-    public int compareTo(WarCard card){
-        if(this.getRank().compareTo(card.getRank()) < 0){
+    public int compare(WarCard card){
+        int rank1 = this.getRank().ordinal();
+        int rank2 = card.getRank().ordinal();
+        if(rank1 > rank2){
             return 1;
         }
-        else if(this.getRank().compareTo(card.getRank()) > 0){
+        else if(rank1 < rank2){
             return -1;
         }
         else

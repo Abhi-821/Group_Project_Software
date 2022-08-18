@@ -1,28 +1,34 @@
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class CardDealer {
 
-    public static List dealCards(int type){
+    private static ArrayList<WarCard>  player1Hand = new ArrayList<WarCard>();
+    private static ArrayList<WarCard>  player2Hand = new ArrayList<WarCard>();
 
-        Collections.shuffle(Deck.getDeck());
-
-
-        List <WarCard>  player1Cards= Deck.getDeck().subList(0,26);
-        List <WarCard> player2Cards= Deck.getDeck().subList(26,52);
-
-
-        if(type == 1){
-            return player1Cards;
-        }
-        else if (type == 2){
-            return player2Cards;
-        }
-        else
-            return null;
-
-
+    public static ArrayList<WarCard> getPlayer1Hand() {
+        return player1Hand;
     }
-}
+
+    public static ArrayList<WarCard> getPlayer2Hand() {
+        return player2Hand;
+    }
+
+    public static void dealCards() {
+        Collections.shuffle(Deck.getDeck());
+        ArrayList<WarCard> cards = Deck.getDeck();
+        WarCard temp;
+            for (int i = 0; i < 26; i++) {
+                temp = cards.get(i);
+                player1Hand.add(temp);
+            }
+            for (int i = 26; i < 51; i++) {
+                temp = cards.get(i);
+                player2Hand.add(temp);
+            }
+        }
+    }
+
+

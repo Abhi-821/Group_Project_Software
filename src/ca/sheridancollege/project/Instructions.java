@@ -24,6 +24,7 @@ public class Instructions {
                 "kept face down on previous 3.\n" +
                 "• The same procedure follows, and the first cards are flipped. The person with higher rank\n" +
                 "then takes all 12 cards.\n" +
+                "• If a person do not have enough cards during the war, he/she losses the game. \n" +
                 "• This process continues till one player gets all 52 cards and wins. The person who runs out of\n" +
                 "the cards first losses\n");
         System.out.println();

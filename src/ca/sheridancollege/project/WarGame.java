@@ -209,6 +209,12 @@ public class WarGame extends Game{
             System.out.println("player2 : " + player2.getName() + " has won this game!");
         } else if (player2.getPlayer2Hand().size() == 0) {
             System.out.println("player1 : " + player1.getName() + " has won this game!");
+        } else if (player1.getPlayer1Hand().size() < 3) {
+            System.out.println("Sorry player 1: "+player1.getName()+" has insufficient cards to play on "+'\n'+
+                    "player2 : " + player2.getName() + " has won this game!");
+        } else if (player1.getPlayer2Hand().size() < 3) {
+            System.out.println("Sorry player 2: "+player2.getName()+" has insufficient cards to play on "+'\n'+
+                    "player1 : " + player1.getName() + " has won this game!");
         }
         System.out.println("-------------------------------------------------------");
         System.out.println();

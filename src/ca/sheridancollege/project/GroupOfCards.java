@@ -16,6 +16,8 @@ import java.util.Collections;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @Editors: Fizza Imran, Abhi Sharma, Sniya Hussain, Gurleen Singh.
+ *
  */
 public class GroupOfCards {
 

@@ -12,7 +12,8 @@ package ca.sheridancollege.project;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
- * Commit
+ * @Editors: Fizza Imran, Abhi Sharma, Sniya Hussain, Gurleen Singh.
+ *
  */
 public abstract class Player {
 

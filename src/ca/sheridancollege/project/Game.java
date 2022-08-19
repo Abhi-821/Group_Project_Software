@@ -15,6 +15,8 @@ import java.util.ArrayList;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @Editors: Fizza Imran, Abhi Sharma, Sniya Hussain, Gurleen Singh.
+ *
  */
 public abstract class Game {
 

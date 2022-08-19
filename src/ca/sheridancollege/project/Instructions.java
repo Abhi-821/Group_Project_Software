@@ -1,7 +1,9 @@
 package ca.sheridancollege.project;
-
 import java.util.Scanner;
-
+/*
+@Authors: Fizza Imran, Abhi Sharma, Sniya Hussain, Gurleen Singh.
+Description: The view class responsible for printing out instructions.
+ */
 public class Instructions {
     public static void PrintInstructions(){
         int move;

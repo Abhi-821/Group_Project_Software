@@ -35,4 +35,4 @@ To run this game:
 
 ## Contact
 
-If you have any questions or feedback, please contactabhiisharma08@gmail.com 
+If you have any questions or feedback, please contact abhiisharma08@gmail.com 
